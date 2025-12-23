@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammet Ali CORUT - Full Stack Web Developer | React, Next.js, Node.js">
+    <title>Muhammet Ali CORUT | Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="logo-bracket">&lt;</span>Dev<span class="logo-bracket">/&gt;</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-bracket">&lt;</span>Dev<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hakkimda" data-tr="Hakkımda" data-en="About">Hakkımda</a></li>
+                <li><a href="#projeler" data-tr="Projeler" data-en="Projects">Projeler</a></li>
+                <li><a href="#yetenekler" data-tr="Yetenekler" data-en="Skills">Yetenekler</a></li>
+                <li><a href="#iletisim" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language Toggle -->
+                <button class="lang-toggle" id="lang-toggle" title="Change Language">
+                    <span class="lang-text">EN</span>
+                </button>
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <button class="menu-toggle" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <canvas id="particles"></canvas>
+        <div class="hero-content">
+            <p class="hero-greeting" data-tr="Merhaba, ben" data-en="Hello, I'm">Merhaba, ben</p>
+            <h1 class="hero-title">
+                <span class="title-line" id="typed-name"></span>
+                <span class="cursor-blink">|</span>
+            </h1>
+            <h2 class="hero-subtitle">
+                <span class="gradient-text">Full Stack Web Developer</span>
+            </h2>
+            <p class="hero-description" data-tr="2 yıldır modern web teknolojileri ile kullanıcı odaklı, performanslı ve ölçeklenebilir full-stack uygulamalar geliştiriyorum." data-en="For 2 years, I've been developing user-focused, performant and scalable full-stack applications with modern web technologies.">
+                2 yıldır modern web teknolojileri ile kullanıcı odaklı, performanslı ve 
+                ölçeklenebilir full-stack uygulamalar geliştiriyorum.
+            </p>
+            <div class="hero-cta">
+                <a href="#projeler" class="btn btn-primary">
+                    <span data-tr="Projelerimi Keşfet" data-en="Explore Projects">Projelerimi Keşfet</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="Muhammet-Ali-CORUT-cv1.pdf" target="_blank" class="btn btn-outline btn-cv">
+                    <i class="fas fa-download"></i>
+                    <span data-tr="CV İndir" data-en="Download CV">CV İndir</span>
+                </a>
+                <a href="#iletisim" class="btn btn-outline">
+                    <span data-tr="İletişime Geç" data-en="Contact Me">İletişime Geç</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="5">0</span>+
+                    <span class="stat-label" data-tr="Proje" data-en="Projects">Proje</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="2">0</span>+
+                    <span class="stat-label" data-tr="Yıl Deneyim" data-en="Years Exp.">Yıl Deneyim</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="10">0</span>+
+                    <span class="stat-label" data-tr="Teknoloji" data-en="Technologies">Teknoloji</span>
+                </div>
+            </div>
+        </div>
+        <a href="#hakkimda" class="scroll-indicator">
+            <span class="mouse"></span>
+            <span class="scroll-text" data-tr="Aşağı Kaydır" data-en="Scroll Down">Aşağı Kaydır</span>
+        </a>
+    </section>
+
+    <section id="hakkimda" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span>
+                <span data-tr="Hakkımda" data-en="About Me">Hakkımda</span>
+            </h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="img/pp.jfif" alt="Muhammet Ali CORUT" class="profile-photo">
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p class="about-text" data-tr="Bartın Üniversitesi Bilgisayar Mühendisliği 5. sınıf öğrencisiyim. <span class='highlight'>2 yıldır web geliştirme</span> alanında aktif olarak çalışıyor, modern teknolojilerle full-stack uygulamalar geliştiriyorum." data-en="I'm a 5th year Computer Engineering student at Bartın University. I've been actively working in <span class='highlight'>web development for 2 years</span>, developing full-stack applications with modern technologies.">
+                        Bartın Üniversitesi Bilgisayar Mühendisliği 5. sınıf öğrencisiyim. 
+                        <span class="highlight">2 yıldır web geliştirme</span> alanında aktif olarak çalışıyor, 
+                        modern teknolojilerle full-stack uygulamalar geliştiriyorum.
+                    </p>
+                    <p class="about-text" data-tr="React, Next.js, Node.js, TypeScript gibi teknolojilerle <span class='highlight'>kurumsal seviyede projeler</span> geliştirdim. Backend geliştirme, veritabanı yönetimi ve RESTful API tasarımı konularında deneyimliyim. 2024 yılında Google Developer Student Clubs (GDSC) Bartın yönetim ekibinde yer aldım." data-en="I've developed <span class='highlight'>enterprise-level projects</span> with technologies like React, Next.js, Node.js, TypeScript. I have experience in backend development, database management and RESTful API design. In 2024, I was part of the Google Developer Student Clubs (GDSC) Bartın management team.">
+                        React, Next.js, Node.js, TypeScript gibi teknolojilerle <span class="highlight">kurumsal seviyede projeler</span> 
+                        geliştirdim. Backend geliştirme, veritabanı yönetimi ve RESTful API tasarımı konularında deneyimliyim. 
+                        2024 yılında Google Developer Student Clubs (GDSC) Bartın yönetim ekibinde yer aldım.
+                    </p>
+                    <p class="about-text" data-tr="Şu anda <span class='highlight'>iş fırsatları</span> arıyorum. Öğrenmeye açık, sorumluluk almaktan çekinmeyen ve ekip çalışmasına yatkın bir geliştirici olarak yazılım ekiplerine katkı sunmayı hedefliyorum." data-en="I'm currently looking for <span class='highlight'>job opportunities</span>. As a developer who is open to learning, not afraid to take responsibility and inclined to teamwork, I aim to contribute to software teams.">
+                        Şu anda <span class="highlight">iş fırsatları</span> arıyorum. Öğrenmeye açık, sorumluluk almaktan 
+                        çekinmeyen ve ekip çalışmasına yatkın bir geliştirici olarak yazılım ekiplerine katkı sunmayı hedefliyorum.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bartın, Türkiye</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span data-tr="İş Arıyorum" data-en="Looking for Job">İş Arıyorum</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span data-tr="Bilgisayar Mühendisliği" data-en="Computer Engineering">Bilgisayar Mühendisliği</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projeler" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span>
+                <span data-tr="Öne Çıkan Projeler" data-en="Featured Projects">Öne Çıkan Projeler</span>
+            </h2>
+            <div class="projects-container">
+                <article class="project-card featured">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/1e293b/6366f1?text=Tur+Yönetim+Sistemi" alt="Tur Yönetim Sistemi" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://alkustakip.com/" target="_blank" class="project-link" title="Canlı Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-label" data-tr="Öne Çıkan Proje" data-en="Featured Project">Öne Çıkan Proje</span>
+                        <h3 class="project-title">Tur Yönetim Sistemi (ERP)</h3>
+                        <p class="project-description" data-tr="Turizm acenteleri için kapsamlı ERP sistemi. Müşteri rezervasyonları, tur dönemleri, otel tahsisleri, finansal yönetim, çoklu para birimi desteği ve rol tabanlı yetkilendirme ile end-to-end operasyonel süreç yönetimi sağlıyor." data-en="Comprehensive ERP system for tourism agencies. Provides end-to-end operational process management with customer reservations, tour periods, hotel allocations, financial management, multi-currency support and role-based authorization.">
+                            Turizm acenteleri için kapsamlı ERP sistemi. Müşteri rezervasyonları, tur dönemleri, 
+                            otel tahsisleri, finansal yönetim, çoklu para birimi desteği ve rol tabanlı yetkilendirme 
+                            ile end-to-end operasyonel süreç yönetimi sağlıyor.
+                        </p>
+                        <div class="project-tech">
+                            <span>Next.js 15</span>
+                            <span>React 19</span>
+                            <span>TypeScript</span>
+                            <span>PostgreSQL</span>
+                            <span>Supabase</span>
+                            <span>Tailwind CSS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/1e293b/ec4899?text=E-Fatura+Portal" alt="Aktarım Portalı" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Aktarım Portalı - E-Fatura Yönetimi</h3>
+                        <p class="project-description" data-tr="KOBİ'ler için PDF/XML e-fatura yönetim platformu. Dosya dönüştürme, önizleme, CSV export, depolama kotası ve admin paneli ile tam entegre çözüm." data-en="PDF/XML e-invoice management platform for SMEs. Fully integrated solution with file conversion, preview, CSV export, storage quota and admin panel.">
+                            KOBİ'ler için PDF/XML e-fatura yönetim platformu. Dosya dönüştürme, 
+                            önizleme, CSV export, depolama kotası ve admin paneli ile tam entegre çözüm.
+                        </p>
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>TypeScript</span>
+                            <span>Express.js</span>
+                            <span>Prisma</span>
+                            <span>PostgreSQL</span>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/1e293b/06b6d4?text=NLP+Analiz" alt="NLP Yorum Analizi" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">NLP Tabanlı Müşteri Yorum Analizi</h3>
+                        <p class="project-description" data-tr="Bitirme projesi. Sesli yorumları Whisper AI ile metne dönüştürüp, BERT ile duygu analizi yapan sistem. AWS altyapısı ve Firebase entegrasyonu." data-en="Graduation project. System that converts voice comments to text with Whisper AI and performs sentiment analysis with BERT. AWS infrastructure and Firebase integration.">
+                            Bitirme projesi. Sesli yorumları Whisper AI ile metne dönüştürüp, 
+                            BERT ile duygu analizi yapan sistem. AWS altyapısı ve Firebase entegrasyonu.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Whisper AI</span>
+                            <span>BERT</span>
+                            <span>AWS</span>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/1e293b/22c55e?text=MERNİS+API" alt="MERNİS Doğrulama" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">MERNİS Doğrulama Sistemi</h3>
+                        <p class="project-description" data-tr="Spring Boot ile katmanlı mimari. RESTful API, JWT kimlik doğrulama, SOLID prensipleri ve Dependency Injection ile kurumsal seviye backend sistemi." data-en="Layered architecture with Spring Boot. Enterprise-level backend system with RESTful API, JWT authentication, SOLID principles and Dependency Injection.">
+                            Spring Boot ile katmanlı mimari. RESTful API, JWT kimlik doğrulama, 
+                            SOLID prensipleri ve Dependency Injection ile kurumsal seviye backend sistemi.
+                        </p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>JWT</span>
+                            <span>MSSQL</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="yetenekler" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span>
+                <span data-tr="Teknolojiler & Yetenekler" data-en="Technologies & Skills">Teknolojiler & Yetenekler</span>
+            </h2>
+            <div class="skills-wrapper">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>React / Next.js</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>TypeScript / JavaScript</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML / CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="95"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Tailwind CSS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Node.js / Express</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>C# / Java Spring Boot</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="50"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>PostgreSQL / MySQL / MSSQL</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>REST API / Prisma</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>DevOps & Araçlar</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Git / GitHub</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Firebase / Supabase</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Vercel / AWS</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Ubuntu / Nginx / PM2</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="iletisim" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04.</span>
+                <span data-tr="İletişime Geçin" data-en="Get In Touch">İletişime Geçin</span>
+            </h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3 class="contact-heading" data-tr="Birlikte Çalışalım" data-en="Let's Work Together">Birlikte Çalışalım</h3>
+                    <p class="contact-text" data-tr="Yeni projeler, yaratıcı fikirler veya iş fırsatları için her zaman iletişime açığım. Hemen mesaj gönderin!" data-en="I'm always open to new projects, creative ideas or job opportunities. Send me a message!">
+                        Yeni projeler, yaratıcı fikirler veya iş fırsatları için 
+                        her zaman iletişime açığım. Hemen mesaj gönderin!
+                    </p>
+                    <div class="contact-details">
+                        <a href="mailto:muhammet.corut@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>muhammet.corut@gmail.com</span>
+                        </a>
+                        <a href="tel:+905333607081" class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+90 533 360 70 81</span>
+                        </a>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bartın, Türkiye</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/m0Corut" target="_blank" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/muhammet-corut-1a7150245" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/mjgblybo" method="POST">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name" data-tr="Adınız" data-en="Your Name">Adınız</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message" data-tr="Mesajınız" data-en="Your Message">Mesajınız</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span data-tr="Mesaj Gönder" data-en="Send Message">Mesaj Gönder</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p data-tr="Tasarım & Geliştirme" data-en="Design & Development">Tasarım & Geliştirme</p>
+                <p class="footer-name">Muhammet Ali CORUT © 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
