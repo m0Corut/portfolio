@@ -178,6 +178,7 @@ body {
     z-index: 1000;
     padding: 1.5rem 0;
     transition: var(--transition);
+    background: transparent;
 }
 
 .navbar.scrolled {
@@ -311,6 +312,7 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    padding-top: 80px;
 }
 
 #particles {
@@ -452,7 +454,7 @@ body {
     gap: 4rem;
     animation: fadeInUp 0.8s ease 1s forwards;
     opacity: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
 }
 
 .stat {
@@ -1016,6 +1018,18 @@ body {
 }
 
 @media (max-width: 768px) {
+    .navbar .container {
+        position: relative;
+    }
+    
+    .navbar {
+        background: rgba(15, 23, 42, 0.95);
+    }
+    
+    .hero {
+        padding-top: 100px;
+    }
+    
     .nav-links {
         position: fixed;
         top: 0;
@@ -1027,6 +1041,7 @@ body {
         justify-content: center;
         align-items: center;
         transition: var(--transition);
+        padding-top: 80px;
     }
     
     .nav-links.active {
@@ -1034,15 +1049,24 @@ body {
     }
     
     .nav-controls {
-        position: fixed;
-        top: 1.5rem;
-        right: 70px;
-        z-index: 1001;
+        display: flex;
+        gap: 0.5rem;
+        margin-right: 1rem;
+    }
+    
+    .theme-toggle, .lang-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
     }
     
     .menu-toggle {
         display: flex;
         z-index: 1001;
+    }
+    
+    .scroll-indicator {
+        display: none;
     }
     
     .hero-stats {
