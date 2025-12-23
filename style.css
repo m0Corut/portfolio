@@ -490,6 +490,8 @@ body {
     text-decoration: none;
     color: var(--gray);
     animation: bounce 2s infinite;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .mouse {
